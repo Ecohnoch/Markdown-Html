@@ -27,8 +27,8 @@ def readCodeJS():
 		f.close()
 	return ans + "\n"
 
-def readSourceMD(filename):
-	f = open(filename, 'r')
+def readSourceMD(filePath, filename):
+	f = open(filePath + "/" + filename, 'r')
 	ans = ""
 	try:
 		ans = f.read()
@@ -36,14 +36,14 @@ def readSourceMD(filename):
 		f.close()
 	return ans + "\n"
 
-def output(html, filename):
-	if os.path.exists('output'):
+def output(html, outputPath, outputname):
+	if os.path.exists(outputPath + '/output'):
 		pass
 	else:
-		os.mkdir('output')
-	shutil.copy('prism.css', './output')
-	shutil.copy('prism.js', './output')
+		os.mkdir(outputPath + '/output')
+	shutil.copy('prism.css', outputPath + '/output')
+	shutil.copy('prism.js',  outputPath + '/output')
 
-	f = open('./output/' + filename, 'w')
+	f = open(outputPath + '/output/' + outputname, 'w')
 	f.write(html)
 	f.close()
