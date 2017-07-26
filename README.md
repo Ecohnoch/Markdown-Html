@@ -82,6 +82,12 @@ ecohMD.do(放markdown文件的文件夹，markdown文件文件名，输出文件
 
 \2. 有序列表2
 
+\> 引用文字
+
+\`\`\`
+代码
+\`\`\`
+
 # Examples
 
 md文件如下：
